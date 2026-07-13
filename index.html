@@ -7,214 +7,134 @@
   <meta name="description" content="A playground for hobby games and experiments from Tyneside. Nothing commercial — just code for fun. Maybe one will be finished one day.">
   <link rel="canonical" href="https://tyneside.games/">
   <link rel="icon" href="logo.svg" type="image/svg+xml">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            tyne: {
-              DEFAULT: '#0A2540',
-              deep: '#071a2e',
-              soft: '#143454',
-            },
-            amber: {
-              brand: '#F59E0B',
-            },
-          },
-          fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-          },
-          borderRadius: {
-            '3xl': '1.5rem',
-          },
-        },
-      },
-    };
-  </script>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-    body { font-family: 'Inter', system-ui, sans-serif; }
-    .tyne-blue { color: #0A2540; }
-    .hero {
-      background:
-        linear-gradient(rgba(10, 37, 64, 0.92), rgba(10, 37, 64, 0.96)),
-        url('https://picsum.photos/id/1015/2000/1200');
-      background-size: cover;
-      background-position: center;
-    }
-    a.no-underline { text-decoration: none; }
-  </style>
+  <link rel="stylesheet" href="arcade.css">
 </head>
-<body class="bg-zinc-50 text-zinc-900 antialiased">
+<body class="arcade">
 
-<nav class="bg-white border-b border-zinc-200 sticky top-0 z-50">
-  <div class="max-w-7xl mx-auto px-6 py-4 sm:py-5 flex justify-between items-center gap-4">
-    <a href="index.html" class="flex items-center gap-3 min-w-0 no-underline">
-      <img src="logo.svg" alt="Tyneside Games" class="h-10 sm:h-12 w-auto shrink-0">
-      <span class="text-2xl sm:text-3xl font-bold tracking-tighter tyne-blue">TYNESIDE</span>
-      <span class="text-lg sm:text-2xl font-medium text-zinc-400 hidden sm:inline tracking-tight">GAMES</span>
+<nav class="site-nav" aria-label="Primary">
+  <div class="inner">
+    <a href="index.html" class="brand-link">
+      <img src="logo.svg" alt="Tyneside Games">
+      <span class="brand-word">TYNESIDE</span>
+      <span class="brand-sub">GAMES</span>
     </a>
-    <div class="flex items-center gap-3 sm:gap-6">
-      <div class="hidden md:flex items-center gap-5 text-sm font-medium text-zinc-500">
-            <a href="https://tyneside.software/" class="hover:text-tyne transition no-underline">Software</a>
-            <a href="https://tyneside.cleaning/" class="hover:text-tyne transition no-underline">Cleaning</a>
-            <a href="https://tyneside.charity/" class="hover:text-tyne transition no-underline">Charity</a>
-            <a href="https://tyneside.group/" class="hover:text-tyne transition no-underline">Group</a>
-      </div>
-      <a href="mailto:michael@tyneside.software"
-         class="shrink-0 bg-tyne text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-2xl text-sm sm:text-base font-semibold hover:bg-amber-600 transition no-underline">
-        Say hello
-      </a>
+    <div class="nav-links">
+          <a href="https://tyneside.software/">SOFTWARE</a>
+          <a href="https://tyneside.cleaning/">CLEANING</a>
+          <a href="https://tyneside.charity/">CHARITY</a>
+          <a href="https://tyneside.group/">GROUP</a>
     </div>
+    <a class="btn btn-fill" href="mailto:michael@tyneside.software">Say hello</a>
   </div>
 </nav>
-  <header class="hero text-white py-24 sm:py-28 text-center">
-    <div class="max-w-4xl mx-auto px-6">
-      <p class="text-sm uppercase tracking-[0.2em] text-amber-brand font-semibold mb-4">Tyneside Games</p>
-      <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tighter">TYNESIDE GAMES</h1>
-      <p class="mt-4 text-2xl sm:text-3xl font-light">
+  <header class="hero">
+    <div class="wrap">
+      <p class="hero-kicker">Arcade · Tyneside Games</p>
+      <h1>TYNESIDE<br>GAMES</h1>
+      <p class="hero-tag">
         Hobby code.<br>
         Small games.<br>
         No rush.
       </p>
-      <p class="mt-10 text-lg sm:text-xl max-w-2xl mx-auto text-zinc-200">
-        A corner of the internet for experiments, half-finished ideas, and the occasional playable thing.
+      <p class="hero-lead">
+        Experiments, half-finished ideas, and the occasional playable thing.
         Not a product company. Just for fun. Maybe one will be finished one day.
       </p>
-      <div class="mt-12 flex flex-wrap justify-center gap-4">
-        <a href="#shelf"
-           class="bg-white text-tyne px-8 sm:px-10 py-4 sm:py-5 rounded-3xl font-semibold text-lg sm:text-xl hover:scale-105 transition no-underline">
-          What's on the shelf →
-        </a>
-        <a href="#about"
-           class="border border-white/40 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-3xl font-semibold text-lg sm:text-xl hover:bg-white/10 transition no-underline">
-          Why this exists
-        </a>
+      <div class="hero-actions">
+        <a class="btn btn-fill btn-lg" href="#shelf">The shelf →</a>
+        <a class="btn btn-magenta btn-lg" href="#about">Why this exists</a>
       </div>
     </div>
   </header>
 
-  <section class="py-20 bg-white" id="shelf">
-    <div class="max-w-4xl mx-auto px-6">
-      <h2 class="text-3xl sm:text-4xl font-bold tyne-blue text-center mb-4">The shelf</h2>
-      <p class="text-center text-zinc-600 max-w-2xl mx-auto mb-12">
-          2 games ready to play in the browser.
+  <section class="section" id="shelf">
+    <div class="wrap">
+      <h2>// The shelf</h2>
+      <p class="lede">
+          2 games ready to play. INSERT COIN.
       </p>
 
-        <div class="grid sm:grid-cols-2 gap-6">
-            <a href="play/snake/index.html"
-               class="group block rounded-3xl bg-zinc-50 border border-zinc-100 p-8 hover:ring-2 hover:ring-amber-brand hover:bg-white transition no-underline">
-              <div class="flex items-start justify-between gap-4">
-                <span class="text-4xl" aria-hidden="true">🐍</span>
-                <span class="text-xs font-semibold uppercase tracking-wide text-amber-700 bg-amber-50 px-3 py-1 rounded-full">
-                  playable
-                </span>
-              </div>
-              <h3 class="mt-4 font-semibold text-2xl tyne-blue group-hover:text-tyne">Snake</h3>
-              <p class="mt-2 text-zinc-600">Classic neon snake. Arrow keys or WASD. Eat food, don&#39;t hit walls or yourself.</p>
-              <p class="mt-6 text-sm font-semibold text-amber-600">Play →</p>
+        <div class="grid-2">
+            <a class="game-card" href="play/snake/index.html">
+              <span class="status">playable</span>
+              <span class="emoji" aria-hidden="true">🐍</span>
+              <h3>Snake</h3>
+              <p>Classic neon snake. Arrow keys or WASD. Eat food, don&#39;t hit walls or yourself.</p>
+              <p class="play">Play →</p>
             </a>
-            <a href="play/geometry-dash/index.html"
-               class="group block rounded-3xl bg-zinc-50 border border-zinc-100 p-8 hover:ring-2 hover:ring-amber-brand hover:bg-white transition no-underline">
-              <div class="flex items-start justify-between gap-4">
-                <span class="text-4xl" aria-hidden="true">◆</span>
-                <span class="text-xs font-semibold uppercase tracking-wide text-amber-700 bg-amber-50 px-3 py-1 rounded-full">
-                  playable
-                </span>
-              </div>
-              <h3 class="mt-4 font-semibold text-2xl tyne-blue group-hover:text-tyne">Geometry Dash Lite</h3>
-              <p class="mt-2 text-zinc-600">Hold jump to clear spikes. Browser runner with Geometry Dash–style physics.</p>
-              <p class="mt-6 text-sm font-semibold text-amber-600">Play →</p>
+            <a class="game-card" href="play/geometry-dash/index.html">
+              <span class="status">playable</span>
+              <span class="emoji" aria-hidden="true">◆</span>
+              <h3>Geometry Dash Lite</h3>
+              <p>Hold jump to clear spikes. Browser runner with Geometry Dash–style physics.</p>
+              <p class="play">Play →</p>
             </a>
         </div>
     </div>
   </section>
 
-  <section class="py-20 bg-zinc-50" id="about">
-    <div class="max-w-3xl mx-auto px-6 text-center">
-      <h2 class="text-3xl sm:text-4xl font-bold tyne-blue mb-6">Why tyneside.games</h2>
-      <p class="text-lg text-zinc-600">
-        The serious work lives on software, cleaning, and charity.
-        This domain is the pressure valve — a place to write code that doesn't need a business case,
-        a pitch deck, or a roadmap. Pure hobby.
+  <section class="section section-alt" id="about">
+    <div class="wrap center">
+      <h2>// Why tyneside.games</h2>
+      <p class="lede">
+        Serious work lives on software, cleaning, and charity.
+        This domain is the pressure valve — code with no business case. Pure hobby.
       </p>
-      <p class="mt-6 text-lg text-zinc-600">
-        Built the same way as the rest of the Tyneside family: simple static pages,
-        North East branding, ship when ready.
+      <p class="lede">
+        Same Tyneside arcade skin as the rest of the family. Ship when ready.
       </p>
     </div>
   </section>
 
-  <section class="py-20 bg-white" id="rules">
-    <div class="max-w-4xl mx-auto px-6">
-      <h2 class="text-3xl sm:text-4xl font-bold tyne-blue text-center mb-10">House rules</h2>
-      <div class="grid sm:grid-cols-3 gap-6">
-        <div class="rounded-3xl bg-zinc-50 p-8 border border-zinc-100">
-          <h3 class="font-semibold text-xl tyne-blue mb-2">No deadlines</h3>
-          <p class="text-zinc-600">Finished is optional. Shipping a half-fun prototype is allowed.</p>
+  <section class="section" id="rules">
+    <div class="wrap-wide">
+      <h2>// House rules</h2>
+      <div class="grid-3">
+        <div class="panel">
+          <h3>No deadlines</h3>
+          <p>Finished is optional. Half-fun prototypes allowed.</p>
         </div>
-        <div class="rounded-3xl bg-zinc-50 p-8 border border-zinc-100">
-          <h3 class="font-semibold text-xl tyne-blue mb-2">No sales pitch</h3>
-          <p class="text-zinc-600">Not SaaS. Not freemium. Just games and experiments.</p>
+        <div class="panel panel-m">
+          <h3>No sales pitch</h3>
+          <p>Not SaaS. Not freemium. Just games.</p>
         </div>
-        <div class="rounded-3xl bg-zinc-50 p-8 border border-zinc-100">
-          <h3 class="font-semibold text-xl tyne-blue mb-2">Share when ready</h3>
-          <p class="text-zinc-600">When something is fun enough for a friend to try, it goes on the shelf.</p>
+        <div class="panel panel-c">
+          <h3>Share when ready</h3>
+          <p>Fun enough for a friend? It goes on the shelf.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="py-24 bg-tyne text-white text-center">
-    <div class="max-w-2xl mx-auto px-6">
-      <h2 class="text-4xl sm:text-5xl font-bold mb-6">Got a game idea?</h2>
-      <p class="text-xl sm:text-2xl mb-10 text-zinc-200">
-        Or found a bug in something half-built? Messages welcome — replies on hobby time.
+  <section class="section-cta" id="contact">
+    <div class="wrap">
+      <h2>Got a game idea?</h2>
+      <p class="lede" style="color:var(--text)">
+        Or found a bug in something half-built? Replies on hobby time.
       </p>
-      <a href="mailto:michael@tyneside.software"
-         class="inline-block bg-white text-tyne px-10 sm:px-12 py-5 sm:py-6 rounded-3xl text-xl sm:text-2xl font-semibold hover:bg-amber-400 transition no-underline">
-        michael@tyneside.software
-      </a>
-      <p class="mt-12 text-sm opacity-75">
-        Part of <a href="https://tyneside.group/" class="underline text-white">Tyneside Group</a>
-        · Serious stuff at <a href="https://tyneside.software/" class="underline text-white">tyneside.software</a>
+      <a class="btn btn-fill btn-lg" href="mailto:michael@tyneside.software">michael@tyneside.software</a>
+      <p class="hero-meta">
+        Part of <a href="https://tyneside.group/">Group</a>
+        · Serious stuff at <a href="https://tyneside.software/">Software</a>
       </p>
     </div>
   </section>
 
-<footer class="bg-zinc-900 text-zinc-400 py-10 text-center text-sm px-6">
-  <div class="max-w-4xl mx-auto">
-    <p class="flex flex-wrap justify-center gap-x-3 gap-y-2 text-zinc-300 font-medium mb-6">
-        <a href="https://tyneside.software/"
-           class="text-zinc-400 hover:text-white transition no-underline">
-          Tyneside Software
-        </a>
-<span class="text-zinc-600" aria-hidden="true">·</span>        <a href="https://tyneside.cleaning/"
-           class="text-zinc-400 hover:text-white transition no-underline">
-          Tyneside Cleaning
-        </a>
-<span class="text-zinc-600" aria-hidden="true">·</span>        <a href="https://tyneside.charity/"
-           class="text-zinc-400 hover:text-white transition no-underline">
-          Tyneside Charity
-        </a>
-<span class="text-zinc-600" aria-hidden="true">·</span>        <a href="https://tyneside.group/"
-           class="text-zinc-400 hover:text-white transition no-underline">
-          Tyneside Group
-        </a>
-<span class="text-zinc-600" aria-hidden="true">·</span>        <a href="https://tyneside.games/"
-           class="text-white transition no-underline">
-          Tyneside Games
-        </a>
-    </p>
-    <p>
-      Tyneside Software Ltd • 10 Abbey Terrace, Newcastle upon Tyne, NE27 0QP<br>
-      Company #17326934 • SIC 58290 • Proudly made on the banks of the Tyne
-    </p>
-    <p class="mt-4 opacity-70">
-      &copy; Tyneside Games · Part of the Tyneside family
-    </p>
+<footer class="site-footer">
+  <div class="footer-brands">
+      <a href="https://tyneside.software/" class="">SOFTWARE</a>
+      <a href="https://tyneside.cleaning/" class="">CLEANING</a>
+      <a href="https://tyneside.charity/" class="">CHARITY</a>
+      <a href="https://tyneside.group/" class="">GROUP</a>
+      <a href="https://tyneside.games/" class="is-current">GAMES</a>
   </div>
+  <p class="legal">
+    Tyneside Software Ltd • 10 Abbey Terrace, Newcastle upon Tyne, NE27 0QP<br>
+    Company #17326934 • SIC 58290 • <span class="blink">█</span> Proudly made on the banks of the Tyne
+  </p>
+  <p class="legal" style="margin-top:0.75rem;opacity:0.7">
+    &copy; Tyneside Games · INSERT COIN TO CONTINUE
+  </p>
 </footer>
 </body>
 </html>
