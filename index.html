@@ -99,21 +99,35 @@
     <div class="max-w-4xl mx-auto px-6">
       <h2 class="text-3xl sm:text-4xl font-bold tyne-blue text-center mb-4">The shelf</h2>
       <p class="text-center text-zinc-600 max-w-2xl mx-auto mb-12">
-        Games will land here as they're worth sharing. Empty shelves are honest shelves.
+          2 games ready to play in the browser.
       </p>
 
-      <div class="rounded-3xl border-2 border-dashed border-zinc-300 bg-zinc-50 p-10 sm:p-14 text-center">
-        <p class="text-5xl mb-4" aria-hidden="true">🎲</p>
-        <h3 class="text-2xl font-semibold tyne-blue mb-3">Nothing playable yet</h3>
-        <p class="text-zinc-600 max-w-lg mx-auto">
-          This is the home for hobby projects — browser games, prototypes, silly tools.
-          When something is good enough to click, it'll show up here with a short note and a link.
-        </p>
-        <p class="mt-6 text-sm text-zinc-500">
-          Status: waiting for the first WIP to graduate.
-        </p>
-      </div>
-
+        <div class="grid sm:grid-cols-2 gap-6">
+            <a href="/play/snake/"
+               class="group block rounded-3xl bg-zinc-50 border border-zinc-100 p-8 hover:ring-2 hover:ring-amber-brand hover:bg-white transition no-underline">
+              <div class="flex items-start justify-between gap-4">
+                <span class="text-4xl" aria-hidden="true">🐍</span>
+                <span class="text-xs font-semibold uppercase tracking-wide text-amber-700 bg-amber-50 px-3 py-1 rounded-full">
+                  playable
+                </span>
+              </div>
+              <h3 class="mt-4 font-semibold text-2xl tyne-blue group-hover:text-tyne">Snake</h3>
+              <p class="mt-2 text-zinc-600">Classic neon snake. Arrow keys or WASD. Eat food, don&#39;t hit walls or yourself.</p>
+              <p class="mt-6 text-sm font-semibold text-amber-600">Play →</p>
+            </a>
+            <a href="/play/geometry-dash/"
+               class="group block rounded-3xl bg-zinc-50 border border-zinc-100 p-8 hover:ring-2 hover:ring-amber-brand hover:bg-white transition no-underline">
+              <div class="flex items-start justify-between gap-4">
+                <span class="text-4xl" aria-hidden="true">◆</span>
+                <span class="text-xs font-semibold uppercase tracking-wide text-amber-700 bg-amber-50 px-3 py-1 rounded-full">
+                  playable
+                </span>
+              </div>
+              <h3 class="mt-4 font-semibold text-2xl tyne-blue group-hover:text-tyne">Geometry Dash Lite</h3>
+              <p class="mt-2 text-zinc-600">Hold jump to clear spikes. Browser runner with Geometry Dash–style physics.</p>
+              <p class="mt-6 text-sm font-semibold text-amber-600">Play →</p>
+            </a>
+        </div>
     </div>
   </section>
 
